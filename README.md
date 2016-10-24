@@ -1,10 +1,8 @@
 ## Node.parentElement polyfill
 
-A spec-compliant polyfill for [Node.parentElement](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement). It adds support for it in browsers that doesn't support it (IE <9).
+A spec-compliant polyfill for [Node.parentElement](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement). It adds support for it in IE <8.
 
- It requires [`Document`](https://github.com/Financial-Times/polyfill-service/blob/master/polyfills/Document/polyfill.js), [`Element`](https://github.com/Financial-Times/polyfill-service/blob/master/polyfills/Element/polyfill.js) and [`Object.defineProperty`](https://github.com/Financial-Times/polyfill-service/blob/master/polyfills/Object/defineProperty/polyfill.js) to be defined.
-
-It also normalizes the behavior between different browsers. Some, like Internet Explorer >=9 and Opera <=12 have implemented the method only on `Elements` while others have implemented it on all `Nodes`. This polyfill makes sure that it always works on all `Nodes`.
+It also normalizes the behavior between different browsers. Some, like Internet Explorer >=9 and Opera <=12 have implemented the method only on `Elements` while others have implemented it on all `Nodes`. `Node` is undefined in IE8. This polyfill makes sure that it always works on all types that implements `Node` such as `Attr` and `Text`.
 
 ### Install
 Install with

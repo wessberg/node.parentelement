@@ -1,6 +1,6 @@
 {
   "name": "node.parentelement",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A spec-compliant cross-browser polyfill for Node.parentElement",
   "main": "polyfill.min.js",
   "scripts": {

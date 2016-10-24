@@ -10,7 +10,7 @@ export default {
 			compress: {
 				warnings: false,
 				dead_code: true,
-				unsafe: true,
+				unsafe: false,
 				drop_console: true,
 				unused: true,
 				loops: true,
@@ -24,7 +24,7 @@ export default {
 				cascade: true,
 				collapse_vars: true
 			},
-			screwIE8: true,
+			screwIE8: false,
 			comments: false,
 			mangle: true
 		}, minify)
