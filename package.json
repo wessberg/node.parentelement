@@ -1,0 +1,18 @@
+{
+  "name": "node.parentelement",
+  "version": "1.0.0",
+  "description": "A spec-compliant cross-browser polyfill for Node.parentElement",
+  "main": "polyfill.min.js",
+  "scripts": {
+		"build": "npm run build:dev && npm run build:min",
+    "build:dev": "rollup -c rollup.config.js -o polyfill.js",
+		"build:min": "NODE_ENV=production rollup -c rollup.config.js -o polyfill.min.js"
+  },
+  "author": "Frederik Wessberg",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.36.3",
+    "rollup-plugin-uglify": "^1.0.1",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony"
+  }
+}
