@@ -15,10 +15,33 @@
 			return this.parentNode instanceof Element ? this.parentNode : null;
 		}
 
-		Object.defineProperty(Attr.prototype,			"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
-		Object.defineProperty(Text.prototype,			"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
-		Object.defineProperty(Element.prototype,	"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
-		Object.defineProperty(Document.prototype,	"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
+		try {
+			Object.defineProperty(Attr.prototype,			"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
+		} catch (e) {
+			// IE8
+			Attr.prototype.parentElement = implementation;
+		}
+
+		try {
+			Object.defineProperty(Text.prototype,			"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
+		} catch (e) {
+			// IE8
+			Text.prototype.parentElement = implementation;
+		}
+
+		try {
+			Object.defineProperty(Element.prototype,	"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
+		} catch (e) {
+			// IE8
+			Element.prototype.parentElement = implementation;
+		}
+
+		try {
+			Object.defineProperty(Document.prototype,	"parentElement", { configurable: false, enumerable: false, configurable: false, get: implementation });
+		} catch (e) {
+			// IE8
+			Document.prototype.parentElement = implementation;
+		}
 
 	}
 }());
